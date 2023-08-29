@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf_token() }}" />
   <title>AdminLTE 3 | Dashboard 2</title>
 
   <!-- Google Font: Source Sans Pro -->
@@ -13,6 +14,9 @@
   <link rel="stylesheet" href="{{ url('admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ url('admin/dist/css/adminlte.min.css')}}">
+
+  <link rel="stylesheet" href="{{ url('admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
+
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -63,5 +67,14 @@
 <script src="{{ url('admin/dist/js/demo.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ url('admin/dist/js/pages/dashboard2.js')}}"></script>
+<script src="{{ url('admin/dist/js/custom.js')}}"></script>
+<script src="{{ url('admin/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{ url('admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script>
+  $(function () {
+    $("#cms_page").DataTable();
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

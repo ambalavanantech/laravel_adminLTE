@@ -1,6 +1,7 @@
   
   @extends('admin.layout.layout');
   @section('content');
+  @section('dashboard','active');
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -24,6 +25,16 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
+
+      @if(Session::has('error_message'))
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>Error: </strong>{{Session::get('error_message')}}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+              </div>
+              @endif
+              
         <!-- Info boxes -->
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3">
@@ -87,7 +98,7 @@
           <!-- /.col -->
         </div>
         <!-- /.row -->
-
+{{-- 
         <div class="row">
           <div class="col-md-12">
             <div class="card">
@@ -852,6 +863,8 @@
           </div>
           <!-- /.col -->
         </div>
+
+--}}
         <!-- /.row -->
       </div><!--/. container-fluid -->
     </section>
